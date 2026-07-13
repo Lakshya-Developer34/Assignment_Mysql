@@ -17,7 +17,6 @@ USE songs;
 
 
 -- Task 1
-
 CREATE TABLE Playlist (
     id INT PRIMARY KEY,
     song_name VARCHAR(100),
@@ -29,7 +28,6 @@ CREATE TABLE Playlist (
 INSERT INTO Playlist VALUES (1, 'Satranga', 'Arijit Singh', 272);
 
 -- Task 2
-
 INSERT INTO Playlist VALUES
 (2, 'Excuses', 'AP Dhillon', 236),
 (3, 'Brown Munde', 'AP Dhillon', 245),
@@ -39,7 +37,6 @@ SET SQL_SAFE_UPDATES = 0;    -- it is use to deactivate safe mode temporarily
 
 
 -- Task 3
-
 UPDATE Playlist
 SET artist = 'Arijit Singh'
 WHERE artist = 'Arjit Singh';
@@ -50,3 +47,9 @@ DELETE FROM Playlist
 WHERE duration < 120;
 
 -- Task 5
+SELECT * FROM playlist;
+UPDATE Playlist
+SET song_name = CONCAT(song_name, ' (Remix)')
+WHERE artist = 'AP Dhillon'
+  AND duration > 180;
+
