@@ -13,8 +13,6 @@ Suppose you want to display the top 3 trending songs from a 'songs' table based 
 */
 
 
-
-
 CREATE DATABASE assignment6;
 USE assignment6;
 CREATE TABLE products (
@@ -80,6 +78,21 @@ INSERT INTO restaurants  VALUES
 (10, 'Zesty Bites', 'Chinese', 4.5, 'Hyderabad');
 
 
+CREATE TABLE MusicPlaylist(
+id INT PRIMARY KEY NOT NULL,
+song_name VARCHAR(50),
+play_count INT,
+release_date DATE
+);
+
+INSERT INTO musicplaylist
+VALUES
+(1, 'Excuses', 575,'2021-07-04' ),
+(2, 'Brown Munde', 330 , '2021-04-08'),
+(3, 'Kesariya', 220 , '2022-02-01'),
+(4, 'Believer', 575 , '2025-07-24'),
+(5, 'Shape of You', 220 , '2026-11-17');
+
 -- Task 1 
 SELECT * FROM products ORDER BY price ASC;
 
@@ -91,3 +104,6 @@ SELECT * FROM movies ORDER BY release_year DESC , rating DESC;
 
 -- Task 4
 SELECT * FROM restaurants ORDER BY name ASC LIMIT 10;
+
+-- Task 5
+SELECT * FROM MusicPlaylist ORDER BY  play_count  DESC , release_date DESC LIMIT 3; 
